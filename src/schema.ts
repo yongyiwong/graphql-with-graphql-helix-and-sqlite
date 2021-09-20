@@ -173,6 +173,17 @@ mutation{
   subscription: new GraphQLObjectType({
     name: "Subscription",
     fields: () => ({
+      /************************************************ 
+* How to use      
+subscription{
+	subscribeArtist{
+    ArtistLogId,
+    OperationType,
+    ArtistId,
+    Name
+  }
+}
+*************************************************/      
       subscribeArtist: {
         type: new GraphQLList(ArtistLogType),
         subscribe: async function* (_root, _args, ctx) {
